@@ -42,7 +42,12 @@ exports.awsS3 = {
 ```js
 // {app_root}/config/config.default.js
 exports.awsS3 = {
-  client: {},
+  client: {
+    convertAsync: true,  // plugin owner property, while this flag is true, s3 client object will add async function
+    sslEnabled: false,
+    s3ForcePathStyle: true,
+    signatureVersion: 'v2',
+  },
   app: true,
   agent: false,
 };
@@ -57,6 +62,14 @@ app.awsS3.listBuckets({}, (err, data) => {
     console.log(err);
   console.log(data);
 });
+
+// while convertAsync is enable, you can use async/await like
+try {
+  const data = await app.awsS3.listBucketsAsync({});
+  console.log(data);
+} catch (err) {
+  console.log(err);
+}
 ```
 
 see [aws document method summary](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#method-summary) for APIs.
