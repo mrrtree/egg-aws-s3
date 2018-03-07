@@ -1,7 +1,7 @@
 {
   "name": "egg-aws-s3",
   "version": "1.0.0",
-  "description": "official S3 sdk for egg ",
+  "description": "S3 official sdk for egg",
   "eggPlugin": {
     "name": "awsS3"
   },
@@ -10,7 +10,9 @@
     "eggPlugin",
     "egg-plugin"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "2.205.0"
+  },
   "devDependencies": {
     "autod": "^3.0.0",
     "autod-egg": "^1.0.0",
@@ -35,9 +37,10 @@
     "autod": "autod"
   },
   "files": [
-    "app.js",
+    "config",
     "agent.js",
-    "config"
+    "lib",
+    "app.js"
   ],
   "ci": {
     "version": "8, 9"
