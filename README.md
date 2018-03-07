@@ -42,14 +42,24 @@ exports.awsS3 = {
 ```js
 // {app_root}/config/config.default.js
 exports.awsS3 = {
+  client: {},
+  app: true,
+  agent: false,
 };
-```
 
-see [config/config.default.js](config/config.default.js) for more detail.
+```
+see [aws document contructor property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property) for more client detail.
 
 ## Example
+```
+app.awsS3.listBuckets({}, (err, data) => {
+  if (err)
+    console.log(err);
+  console.log(data);
+});
+```
 
-<!-- example here -->
+see [aws document method summary](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#method-summary) for APIs.
 
 ## Questions & Suggestions
 

@@ -1,5 +1,6 @@
 'use strict';
 
+const assert = require('assert');
 const mock = require('egg-mock');
 
 describe('test/aws-s3.test.js', () => {
@@ -11,13 +12,14 @@ describe('test/aws-s3.test.js', () => {
     return app.ready();
   });
 
-  after(() => app.close());
+  // after(() => app.close());
   afterEach(mock.restore);
 
-  it('should GET /', () => {
-    return app.httpRequest()
-      .get('/')
-      .expect('hi, awsS3')
-      .expect(200);
+  it('1. test list buckets', function(done) {
+    app.awsS3.listBuckets({}, (err, data) => {
+      assert(err === null);
+      assert(data !== undefined);
+      done();
+    });
   });
 });
