@@ -7,6 +7,7 @@
  */
 exports.awsS3 = {
   client: {
+    convertAsync: true,
     sslEnabled: false,
     s3ForcePathStyle: true,
     signatureVersion: 'v2',

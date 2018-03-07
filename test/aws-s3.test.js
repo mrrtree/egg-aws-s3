@@ -17,9 +17,14 @@ describe('test/aws-s3.test.js', () => {
 
   it('1. test list buckets', function(done) {
     app.awsS3.listBuckets({}, (err, data) => {
-      assert(err === null);
-      assert(data !== undefined);
+      assert(!err);
+      assert(data);
       done();
     });
+  });
+
+  it('2. test list buckets async', async function() {
+    const data = await app.awsS3.listBucketsAsync({});
+    assert(data);
   });
 });
