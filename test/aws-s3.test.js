@@ -16,11 +16,8 @@ describe('test/aws-s3.test.js', () => {
   afterEach(mock.restore);
 
   it('1. test list buckets', function(done) {
-    console.log('awsS3 object ===> %j', app.awsS3);
-
     app.awsS3.listBuckets({}, (err, data) => {
-      console.log('data ===> %j', data);
-      assert(err === undefined);
+      assert(err === null);
       assert(data !== undefined);
       done();
     });
