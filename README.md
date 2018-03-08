@@ -56,7 +56,7 @@ exports.awsS3 = {
 see [aws document contructor property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property) for more client detail.
 
 ## Example
-```
+```js
 app.awsS3.listBuckets({}, (err, data) => {
   if (err)
     console.log(err);
