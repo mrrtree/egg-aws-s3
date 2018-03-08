@@ -1,6 +1,6 @@
 {
   "name": "egg-aws-s3",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "S3 official sdk for egg",
   "eggPlugin": {
     "name": "awsS3"
